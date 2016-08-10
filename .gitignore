@@ -1,0 +1,7 @@
+.project
+.idea
+target
+.settings
+.classpath
+web-seed.iml
+**/**/target
