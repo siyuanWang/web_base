@@ -72,7 +72,7 @@
 	</bean>
 
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="markerInterface" value="com.jd.ads.union.mng.dao.base.ISqlMapper" />
+		<property name="markerInterface" value="com.wsy.webseed.dao.base.ISqlMapper" />
 		<property name="sqlSessionFactoryBeanName" value="transactionManager"  />
 		<property name="basePackage" value="com.wsy.webseed.dao" />
 	</bean>

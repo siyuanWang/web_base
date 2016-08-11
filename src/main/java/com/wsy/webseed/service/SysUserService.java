@@ -18,7 +18,7 @@ public interface SysUserService {
      * @param id
      * @return
      */
-    public SysUserVo query(int id);
+    public SysUserVo query(Long id);
     
     /**
      * 查询所有SysUser

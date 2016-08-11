@@ -1,46 +1,38 @@
 package com.wsy.webseed.filter;
 
-import java.io.IOException;
+import com.wsy.webseed.domain.SysUserVo;
+import com.wsy.webseed.util.SysConstant;
 
-import javax.servlet.Filter;
-import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 
-import com.wsy.webseed.dao.entity.SysUser;
-import com.wsy.webseed.util.SysConstant;
+public class SessionFilter implements Filter {
 
-public class SessionFilter implements Filter{
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
 
-	@Override
-	public void init(FilterConfig filterConfig) throws ServletException {
-		// TODO Auto-generated method stub
-		
-	}
+    }
 
-	@Override
-	public void doFilter(ServletRequest arg0, ServletResponse arg1,
-			FilterChain chain) throws IOException, ServletException {
-		HttpServletRequest request = (HttpServletRequest) arg0;
-		HttpServletResponse response = (HttpServletResponse) arg1;
-		HttpSession session = request.getSession();
-		SysUser user = (SysUser) session.getAttribute(SysConstant.SESSION_USER_KEY);
-		if (user == null ) {
-			response.sendRedirect(request.getContextPath() + "/login/");
-			return;
-		}
-		chain.doFilter(arg0, arg1);
-	}
+    @Override
+    public void doFilter(ServletRequest arg0, ServletResponse arg1,
+                         FilterChain chain) throws IOException, ServletException {
+        HttpServletRequest request = (HttpServletRequest) arg0;
+        HttpServletResponse response = (HttpServletResponse) arg1;
+        HttpSession session = request.getSession();
+        SysUserVo user = (SysUserVo) session.getAttribute(SysConstant.SESSION_USER_KEY);
+        if (user == null) {
+            response.sendRedirect(request.getContextPath() + "/login/");
+            return;
+        }
+        chain.doFilter(arg0, arg1);
+    }
 
-	@Override
-	public void destroy() {
-		// TODO Auto-generated method stub
-		
-	}
+    @Override
+    public void destroy() {
+
+    }
 
 }
