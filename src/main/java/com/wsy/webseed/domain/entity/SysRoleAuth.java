@@ -5,7 +5,7 @@ public class SysRoleAuth {
 
 	private Long id;
 	private Long roleId;
-	private Long menuId;
+	private Long authId;
 
 	public Long getId() {
 		return id;
@@ -23,11 +23,11 @@ public class SysRoleAuth {
 		this.roleId = roleId;
 	}
 
-	public Long getMenuId() {
-		return menuId;
+	public Long getAuthId() {
+		return authId;
 	}
 
-	public void setMenuId(Long menuId) {
-		this.menuId = menuId;
+	public void setAuthId(Long authId) {
+		this.authId = authId;
 	}
 }
