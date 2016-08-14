@@ -2,9 +2,9 @@ package com.wsy.webseed.util;
 
 public class SysConstant {
 
-    public static final String SESSION_LOGIN_ID_KEY = "loginId";
+    public static final String SESSION_LOGIN_ID_KEY = "login_id_key";
 
-    public static final String SESSION_USER_KEY = "user";
+    public static final String SESSION_USER_KEY = "user_key";
 
     public static final int MENU_TYPE_MENU = 1;
 
